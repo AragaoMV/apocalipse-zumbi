@@ -12,6 +12,7 @@ public class ControlaJogador : MonoBehaviour
     private Rigidbody rigidbodyJogador;
     private Animator animatorJogador;
     public int Vida = 100;
+    public ControlaUI ScriptContolaInterface;
 
     void Start()
     {
@@ -66,6 +67,7 @@ public class ControlaJogador : MonoBehaviour
     public void TomarDano(int dano)
     {
         Vida -= dano;
+        ScriptContolaInterface.AtualizaBarraDeVida();
         if (Vida <= 0)
         {
             Time.timeScale = 0;

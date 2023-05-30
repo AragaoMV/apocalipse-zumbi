@@ -299,7 +299,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.23f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.23f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.23f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.WebGLModule.dll"
--r:"C:/Unity Projects/apocalipse-zumbi-alura/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"C:/Unity Projects/apocalipse-zumbi/apocalipse-zumbi-jogo/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/2000b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -323,6 +324,7 @@
 "Assets/Scripts/ControlaCamera.cs"
 "Assets/Scripts/ControlaInimigo.cs"
 "Assets/Scripts/ControlaJogador.cs"
+"Assets/Scripts/ControlaUI.cs"
 "Assets/Scripts/GeradorZumbis.cs"
 -langversion:9.0
 
