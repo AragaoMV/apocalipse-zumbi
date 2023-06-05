@@ -13,6 +13,7 @@ public class ControlaJogador : MonoBehaviour
     private Animator animatorJogador;
     public int Vida = 100;
     public ControlaUI ScriptContolaInterface;
+    public AudioClip SomDeDano;
 
     void Start()
     {
@@ -68,6 +69,8 @@ public class ControlaJogador : MonoBehaviour
     {
         Vida -= dano;
         ScriptContolaInterface.AtualizaBarraDeVida();
+        ControlaAudio.instacia.PlayOneShot(SomDeDano);
+
         if (Vida <= 0)
         {
             Time.timeScale = 0;

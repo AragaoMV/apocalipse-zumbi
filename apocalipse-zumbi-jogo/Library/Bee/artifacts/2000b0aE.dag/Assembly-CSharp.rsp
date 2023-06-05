@@ -321,6 +321,7 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Bala.cs"
 "Assets/Scripts/ControlaArma.cs"
+"Assets/Scripts/ControlaAudio.cs"
 "Assets/Scripts/ControlaCamera.cs"
 "Assets/Scripts/ControlaInimigo.cs"
 "Assets/Scripts/ControlaJogador.cs"

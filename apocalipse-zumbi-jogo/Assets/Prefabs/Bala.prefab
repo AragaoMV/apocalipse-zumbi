@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidade: 20
+  DanoZumbi: {fileID: 8300000, guid: 220f8aed172ca984ca52782eb54ba696, type: 3}
 --- !u!54 &4430182752954339788
 Rigidbody:
   m_ObjectHideFlags: 0
