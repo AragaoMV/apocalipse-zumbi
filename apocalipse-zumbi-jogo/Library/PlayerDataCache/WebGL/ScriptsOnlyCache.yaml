@@ -3,9 +3,11 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Bala
     - ControlaArma
+    - ControlaAudio
     - ControlaCamera
     - ControlaInimigo
     - ControlaJogador
+    - ControlaUI
     - GeradorZumbis
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -24,13 +26,20 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   serializedClasses:
     UnityEngine.CoreModule:
     - UnityEngine.Events.PersistentCallGroup
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
+    - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
     Assets/game.unity:
@@ -60,6 +69,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -73,27 +86,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2048}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 2488}
+      Script: {instanceID: 1892}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2054}
     - Class: 114
-      Script: {instanceID: 2930}
+      Script: {instanceID: 2504}
     - Class: 114
-      Script: {instanceID: 4832}
+      Script: {instanceID: 2690}
     - Class: 114
-      Script: {instanceID: 4974}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 5256}
+      Script: {instanceID: 4714}
     - Class: 114
-      Script: {instanceID: 5688}
+      Script: {instanceID: 4872}
     - Class: 114
-      Script: {instanceID: 6206}
+      Script: {instanceID: 5014}
     - Class: 114
-      Script: {instanceID: 6778}
+      Script: {instanceID: 5298}
     - Class: 114
-      Script: {instanceID: 7140}
+      Script: {instanceID: 5394}
+    - Class: 114
+      Script: {instanceID: 5746}
+    - Class: 114
+      Script: {instanceID: 6268}
+    - Class: 114
+      Script: {instanceID: 6844}
+    - Class: 114
+      Script: {instanceID: 7212}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -107,6 +128,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -169,6 +192,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseExitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e184fa24ddb7ff1e13edddb59ac67adc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlaUI
   - hash:
       serializedVersion: 2
       Hash: a71639925f29aa5f9c515133bdb305fe
@@ -327,7 +356,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: f35872a13b5718c3f4a46eb5b873ed23
+      Hash: 33244a01ed4b64db9496e2081b8f5728
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControlaJogador
@@ -675,6 +704,12 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlaAudio
+  - hash:
+      serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -759,7 +794,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 661e22a6337dd9fe4a9af875d5b3887d
+      Hash: 3fabdbcbe59f109492d615683ea0cc04
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ControlaArma
@@ -891,7 +926,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 6b692dd4420cc1eb1897a0fbb87e54c6
+      Hash: c6bb4aa9c0fb76dd4c8c8cacdb9f33ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bala
@@ -928,4 +963,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/game.unity
-  playerPath: C:/Unity Projects/apocalipse-zumbi-alura/jogo_zumbi
+  playerPath: C:/Unity Projects/apocalipse-zumbi/apocalipse-zumbi-jogo/jogo_zumbi
