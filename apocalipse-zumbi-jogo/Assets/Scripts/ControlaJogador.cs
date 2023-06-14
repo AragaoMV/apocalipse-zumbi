@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ControlaJogador : MonoBehaviour
+public class ControlaJogador : MonoBehaviour, IMatavel
 {
-    public float Velocidade = 10;
+
     Vector3 direcao;
     public LayerMask MascaraChao;
     public GameObject TextoGameOver;
-    private Rigidbody rigidbodyJogador;
-    private Animator animatorJogador;
-    public int Vida = 100;
     public ControlaUI ScriptContolaInterface;
     public AudioClip SomDeDano;
+    private MovimentaJogador controleJogador;
+    private AnimacaoPersonagem animacaoJogador;
+    public Status StatusJogador;
 
     void Start()
     {
         Time.timeScale = 1;
-        rigidbodyJogador = GetComponent<Rigidbody>();
-        animatorJogador = GetComponent<Animator>();
+        controleJogador = GetComponent<MovimentaJogador>();
+        animacaoJogador = GetComponent<AnimacaoPersonagem>();
+        StatusJogador = GetComponent<Status>();
     }
     void Update()
     {
@@ -28,15 +29,9 @@ public class ControlaJogador : MonoBehaviour
 
         direcao = new Vector3(eixoX, 0, eixoZ);
 
-        if (direcao != Vector3.zero)
-        {
-            animatorJogador.SetBool("Movendo", true);
-        }
-        else
-        {
-            animatorJogador.SetBool("Movendo", false);
-        }
-        if (Vida <= 0)
+        animacaoJogador.Movimentar(direcao.magnitude);
+
+        if (StatusJogador.Vida <= 0)
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -47,35 +42,25 @@ public class ControlaJogador : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rigidbodyJogador.MovePosition(rigidbodyJogador.position + (direcao * Velocidade * Time.deltaTime));
-        Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(
-          raio.origin,
-          raio.direction * 100,
-          Color.red
-          );
+        controleJogador.Movimento(direcao, StatusJogador.Velocidade);
+        controleJogador.MiraJogador(MascaraChao);
 
-        RaycastHit impacto;
-
-        if (Physics.Raycast(raio, out impacto, 100, MascaraChao))
-        {
-            Vector3 posicaoMiraJogador = impacto.point - transform.position;
-            posicaoMiraJogador.y = transform.position.y;
-            Quaternion novaRotacao = Quaternion.LookRotation(posicaoMiraJogador);
-            rigidbodyJogador.MoveRotation(novaRotacao);
-        }
     }
     public void TomarDano(int dano)
     {
-        Vida -= dano;
+        StatusJogador.Vida -= dano;
         ScriptContolaInterface.AtualizaBarraDeVida();
         ControlaAudio.instacia.PlayOneShot(SomDeDano);
 
-        if (Vida <= 0)
+        if (StatusJogador.Vida <= 0)
         {
-            Time.timeScale = 0;
-            TextoGameOver.SetActive(true);
+            Morrer();
         }
 
+    }
+    public void Morrer()
+    {
+        Time.timeScale = 0;
+        TextoGameOver.SetActive(true);
     }
 }

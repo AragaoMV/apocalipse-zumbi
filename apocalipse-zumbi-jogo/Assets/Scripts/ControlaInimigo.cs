@@ -2,47 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlaInimigo : MonoBehaviour
+public class ControlaInimigo : MonoBehaviour, IMatavel
 {
     public GameObject Jogador;
-    public float Velocidade = 5;
-    private Rigidbody rigidbodyZumbi;
-    private Animator animatorZumbi;
+    private MovimentaPersonagem movimentoZumbi;
+    private AnimacaoPersonagem animacaoZumbi;
+    private Status statusZumbi;
+    public AudioClip DanoZumbi;
     void Start()
     {
-        rigidbodyZumbi = GetComponent<Rigidbody>();
-        animatorZumbi = GetComponent<Animator>();
         Jogador = GameObject.FindWithTag("Player");
+        GeraSkin();
+        movimentoZumbi = GetComponent<MovimentaPersonagem>();
+        animacaoZumbi = GetComponent<AnimacaoPersonagem>();
+        statusZumbi = GetComponent<Status>();
+    }
+    void GeraSkin()
+    {
         int geraSkinZumbi = Random.Range(1, 27);
         transform.GetChild(geraSkinZumbi).gameObject.SetActive(true);
     }
-    void Update()
-    {
-
-    }
-
     void FixedUpdate()
     {
         float distancia = Vector3.Distance(transform.position, Jogador.transform.position);
         Vector3 direcao = Jogador.transform.position - transform.position;
-        Quaternion novaRotacao = Quaternion.LookRotation(direcao);
-        rigidbodyZumbi.MoveRotation(novaRotacao);
+        movimentoZumbi.Rotacao(direcao);
 
         if (distancia > 2.5)
         {
-            animatorZumbi.SetBool("Atacando", false);
-            rigidbodyZumbi.MovePosition(
-            rigidbodyZumbi.position + direcao.normalized * (Velocidade * Time.deltaTime)
-        );
-
+            movimentoZumbi.Movimento(direcao, statusZumbi.Velocidade);
+            animacaoZumbi.Atacar(false);
         }
         else
         {
-            animatorZumbi.SetBool("Atacando", true);
+            animacaoZumbi.Atacar(true);
         }
-
     }
-
     void AtacaJogador()
     {
         int dano = Random.Range(20, 30);
@@ -50,4 +45,17 @@ public class ControlaInimigo : MonoBehaviour
 
     }
 
+    public void TomarDano(int dano)
+    {
+        statusZumbi.Vida -= dano;
+        if (statusZumbi.Vida <= 0)
+        {
+            Morrer();
+        }
+    }
+    public void Morrer()
+    {
+        Destroy(gameObject);
+        ControlaAudio.instacia.PlayOneShot(DanoZumbi);
+    }
 }

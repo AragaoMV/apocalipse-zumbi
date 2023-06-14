@@ -4911,8 +4911,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.26094228, y: 3.2712703, z: 5.179214}
-  m_Center: {x: 0.12426844, y: 1.5973432, z: 2.5896068}
+  m_Size: {x: 0.26094228, y: 3.2712703, z: 6.170278}
+  m_Center: {x: 0.12426844, y: 1.5973432, z: 3.0851388}
 --- !u!4 &554235956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4302570963127230, guid: f9d1115e0572e4b70b80a6d3a888c8dc, type: 3}
@@ -5160,6 +5160,7 @@ Transform:
   - {fileID: 1508176686}
   - {fileID: 1481608234}
   - {fileID: 2139933452}
+  - {fileID: 1629740872}
   m_Father: {fileID: 1048314679}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7259,6 +7260,21 @@ MonoBehaviour:
   Bala: {fileID: 784080179204626812, guid: a9299ca4901c57248a55f70eff613bc1, type: 3}
   CanoDaArma: {fileID: 1968475771}
   SomDoTiro: {fileID: 8300000, guid: 563abdc9a410d424489e65e3c985a040, type: 3}
+--- !u!114 &844024359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844024346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33397008d85fea545abe51e73f86fa13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VidaBase: 100
+  Vida: 0
+  Velocidade: 7
 --- !u!1001 &847240065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11538,7 +11554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
-  TempoGeraZumbi: 1
+  TempoGeraZumbi: 2
 --- !u!4 &1489974750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4656246329960846, guid: bf4e53320739441f58d231c2ee884b66, type: 3}
@@ -13186,6 +13202,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf4e53320739441f58d231c2ee884b66, type: 3}
+--- !u!1 &1629740871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629740872}
+  - component: {fileID: 1629740873}
+  m_Layer: 0
+  m_Name: GeradorZumbis (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629740872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629740871}
+  m_LocalRotation: {x: -0, y: -0.0050127087, z: -0, w: 0.9999875}
+  m_LocalPosition: {x: 104.7, y: -3.0376396, z: 19.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 579932622}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -0.574, z: 0}
+--- !u!114 &1629740873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629740871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73e7fae212ec4a46b808d283dba8980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
+  TempoGeraZumbi: 3
 --- !u!1001 &1630764315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15368,6 +15430,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 9c8516e009453a54d93de37e2d577a51, type: 3}
     - target: {fileID: 844024348, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
+      propertyPath: Velocidade
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 844024348, guid: 4b3bb44effa49480d8d18049684cc33a, type: 3}
       propertyPath: TextoGameOver
       value: 
       objectReference: {fileID: 1561093951}
@@ -17170,8 +17236,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.150568, y: 14.524448, z: 23.485}
-  m_Center: {x: 0.042844772, y: 7.262224, z: -0.30466747}
+  m_Size: {x: 17.4843, y: 14.524448, z: 22.722101}
+  m_Center: {x: -0.29028988, y: 7.262224, z: -0.68611765}
 --- !u!4 &2089375378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4031271460615696, guid: 6e16ce19f1bb248b2b839473147cf761, type: 3}
@@ -17646,7 +17712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
-  TempoGeraZumbi: 1
+  TempoGeraZumbi: 3
 --- !u!1001 &2145780079
 PrefabInstance:
   m_ObjectHideFlags: 0

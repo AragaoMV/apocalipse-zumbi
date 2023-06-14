@@ -10,7 +10,7 @@ public class ControlaUI : MonoBehaviour
     void Start()
     {
         scriptControlaJogador = GameObject.FindWithTag("Player").GetComponent<ControlaJogador>();
-        BarraDeVidaJogador.maxValue = scriptControlaJogador.Vida;
+        BarraDeVidaJogador.maxValue = scriptControlaJogador.StatusJogador.Vida;
         AtualizaBarraDeVida();
     }
 
@@ -21,6 +21,6 @@ public class ControlaUI : MonoBehaviour
     }
     public void AtualizaBarraDeVida()
     {
-        BarraDeVidaJogador.value = scriptControlaJogador.Vida;
+        BarraDeVidaJogador.value = scriptControlaJogador.StatusJogador.Vida;
     }
 }

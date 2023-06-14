@@ -319,6 +319,7 @@
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/AnimacaoPersonagem.cs"
 "Assets/Scripts/Bala.cs"
 "Assets/Scripts/ControlaArma.cs"
 "Assets/Scripts/ControlaAudio.cs"
@@ -327,6 +328,10 @@
 "Assets/Scripts/ControlaJogador.cs"
 "Assets/Scripts/ControlaUI.cs"
 "Assets/Scripts/GeradorZumbis.cs"
+"Assets/Scripts/IMatavel.cs"
+"Assets/Scripts/MovimentaJogador.cs"
+"Assets/Scripts/MovimentaPersonagem.cs"
+"Assets/Scripts/Status.cs"
 -langversion:9.0
 
 /deterministic

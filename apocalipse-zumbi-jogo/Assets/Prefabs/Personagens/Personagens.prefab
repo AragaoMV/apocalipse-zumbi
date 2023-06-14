@@ -2554,6 +2554,8 @@ GameObject:
   - component: {fileID: 844024350}
   - component: {fileID: 844024349}
   - component: {fileID: 844024348}
+  - component: {fileID: -3091758604682271226}
+  - component: {fileID: 7838593082226946937}
   m_Layer: 0
   m_Name: Personagens
   m_TagString: Untagged
@@ -2663,6 +2665,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocidade: 10
+  MascaraChao:
+    serializedVersion: 2
+    m_Bits: 0
+  TextoGameOver: {fileID: 0}
+  Vida: 100
+  ScriptContolaInterface: {fileID: 0}
+  SomDeDano: {fileID: 0}
+--- !u!114 &-3091758604682271226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884102019447498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5156e734dfd5b7445b2b099f942ca422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7838593082226946937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884102019447498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77eda1576ee31694f86e44547e87c9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1938851689004064
 GameObject:
   m_ObjectHideFlags: 0
