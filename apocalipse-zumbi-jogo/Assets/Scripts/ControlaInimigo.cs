@@ -9,6 +9,13 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
     private AnimacaoPersonagem animacaoZumbi;
     private Status statusZumbi;
     public AudioClip DanoZumbi;
+    private Vector3 posicaoAleatoria;
+    private Vector3 direcao;
+    private float contadorVagar;
+    private float tempoEntrePosicaoAleatoria = 4;
+
+
+
     void Start()
     {
         Jogador = GameObject.FindWithTag("Player");
@@ -25,11 +32,16 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
     void FixedUpdate()
     {
         float distancia = Vector3.Distance(transform.position, Jogador.transform.position);
-        Vector3 direcao = Jogador.transform.position - transform.position;
         movimentoZumbi.Rotacao(direcao);
+        animacaoZumbi.Movimentar(direcao.magnitude);
 
-        if (distancia > 2.5)
+        if (distancia > 15)
         {
+            Vagar();
+        }
+        else if (distancia > 2.5)
+        {
+            direcao = Jogador.transform.position - transform.position;
             movimentoZumbi.Movimento(direcao, statusZumbi.Velocidade);
             animacaoZumbi.Atacar(false);
         }
@@ -37,6 +49,33 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
         {
             animacaoZumbi.Atacar(true);
         }
+    }
+
+    void Vagar()
+    {
+
+        contadorVagar -= Time.deltaTime;
+        if (contadorVagar <= 0)
+        {
+            posicaoAleatoria = AleatoriazarPosicao();
+            contadorVagar += tempoEntrePosicaoAleatoria; 
+        }
+
+        bool menorDistancia = Vector3.Distance(transform.position, posicaoAleatoria) <=0.5;
+
+        if (menorDistancia == false)
+        {
+            direcao = posicaoAleatoria - transform.position;
+            movimentoZumbi.Movimento(direcao, statusZumbi.Velocidade);
+        }
+    }
+    Vector3 AleatoriazarPosicao()
+    {
+        Vector3 posicao = Random.insideUnitSphere * 10;
+        posicao += transform.position;
+        posicao.y = transform.position.y;
+
+        return posicao;
     }
     void AtacaJogador()
     {
