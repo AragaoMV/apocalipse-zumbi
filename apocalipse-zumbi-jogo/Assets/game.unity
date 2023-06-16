@@ -5161,6 +5161,7 @@ Transform:
   - {fileID: 1481608234}
   - {fileID: 2139933452}
   - {fileID: 1629740872}
+  - {fileID: 1581470967}
   m_Father: {fileID: 1048314679}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11525,7 +11526,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1481608234
 Transform:
   m_ObjectHideFlags: 0
@@ -11534,7 +11535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481608233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.48, y: -3.03764, z: -13.9}
+  m_LocalPosition: {x: 14.88, y: -3.03764, z: -3.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11555,6 +11556,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
   TempoGeraZumbi: 2
+  LayerZumbi:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1489974750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4656246329960846, guid: bf4e53320739441f58d231c2ee884b66, type: 3}
@@ -12029,7 +12033,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1508176686
 Transform:
   m_ObjectHideFlags: 0
@@ -12038,7 +12042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508176685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2, y: -3.03764, z: 36.3}
+  m_LocalPosition: {x: 2.25, y: -3.03764, z: 30.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12059,6 +12063,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
   TempoGeraZumbi: 1
+  LayerZumbi:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1509773108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12910,6 +12917,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d2e588be11c45b5bcef522aa3f7cca, type: 3}
+--- !u!1 &1581470966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581470967}
+  - component: {fileID: 1581470968}
+  m_Layer: 0
+  m_Name: GeradorZumbis (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1581470967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581470966}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37, y: -3.03764, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 579932622}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1581470968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581470966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73e7fae212ec4a46b808d283dba8980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
+  TempoGeraZumbi: 2
+  LayerZumbi:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1584533121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13227,7 +13283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629740871}
   m_LocalRotation: {x: -0, y: -0.0050127087, z: -0, w: 0.9999875}
-  m_LocalPosition: {x: 105.6, y: -3.0376396, z: 23.8}
+  m_LocalPosition: {x: 100.7, y: -3.0376396, z: 29.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13248,6 +13304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
   TempoGeraZumbi: 3
+  LayerZumbi:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1630764315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17713,6 +17772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Zumbi: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 3}
   TempoGeraZumbi: 3
+  LayerZumbi:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &2145780079
 PrefabInstance:
   m_ObjectHideFlags: 0
