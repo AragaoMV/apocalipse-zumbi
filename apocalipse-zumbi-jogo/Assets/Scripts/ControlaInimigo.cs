@@ -47,6 +47,7 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
         }
         else
         {
+            direcao = Jogador.transform.position - transform.position;
             animacaoZumbi.Atacar(true);
         }
     }
@@ -58,10 +59,10 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
         if (contadorVagar <= 0)
         {
             posicaoAleatoria = AleatoriazarPosicao();
-            contadorVagar += tempoEntrePosicaoAleatoria; 
+            contadorVagar += tempoEntrePosicaoAleatoria;
         }
 
-        bool menorDistancia = Vector3.Distance(transform.position, posicaoAleatoria) <=0.5;
+        bool menorDistancia = Vector3.Distance(transform.position, posicaoAleatoria) <= 0.5;
 
         if (menorDistancia == false)
         {
